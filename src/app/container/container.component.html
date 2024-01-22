@@ -18,5 +18,6 @@
     <!-- <p>name={{name}}</p> -->
 
     <app-search (searchTextChanged)="setSearchText($event)"></app-search>
-    <app-product-list [searchText]="searchText"></app-product-list>
+    <app-product-list [searchText]="searchText" #productListComponent></app-product-list>
+    <app-product-details *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-details>
 </div>

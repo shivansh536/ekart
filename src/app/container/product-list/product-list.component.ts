@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from 'src/app/Models/Products';
 
 @Component({
   selector: 'app-product-list',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  selectedProduct: Product;
   products = [
     {
       id:1,
@@ -15,7 +17,7 @@ export class ProductListComponent {
       gender:"MEN",
       category: "RUNNING",
       size: [6,8,10,12],
-      color:["White","Blue","Black"],
+      color:["white","blue","black"],
       price: 160,
       is_in_inventory: true,
       items_left:3,
@@ -61,7 +63,6 @@ export class ProductListComponent {
 
   @Input()
   searchText: string ="";
-
   
   selectedFilterRadioButton:string = 'all';
   onFilterChanged(value:string){
